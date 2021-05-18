@@ -23,13 +23,13 @@ interface PostItemProps {
   post: IPost[];
 }
 
-const PostItem: React.FC<PostItemProps> = ({ post: {id, title= "NO TITLE", body="NO BODY"} }) => {
+const PostItem: React.FC<PostItemProps> = ({ post }) => {
   const router = useRouter();
 
   return (
-    title && <Wrapper onClick={() => { router.push('./posts/' + id) }}>
-      <Title>{title}</Title>
-      <p>{body}</p>
+    post.title && <Wrapper onClick={() => { router.push('./posts/' + post.id) }}>
+      <Title>{post.title}</Title>
+      <p>{post.body}</p>
     </Wrapper>
 
   );
