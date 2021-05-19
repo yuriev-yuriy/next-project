@@ -1,7 +1,7 @@
 import React from 'react'; 
 import styled from 'styled-components';
-import { useRouter } from 'next/router';
-import { IPost } from '../types/post';
+// import { IPost } from '../types/post';
+import Link from "next/Link";
 
 const Wrapper = styled.section`
   padding: 4em;
@@ -19,19 +19,19 @@ const Title = styled.h1`
   color: palevioletred;
 `;
 
-interface PostItemProps {
-  post: IPost[];
-}
+// interface PostItemProps {
+//   post: IPost[];
+// }
 
-const PostItem: React.FC<PostItemProps> = ({ post }) => {
-  const router = useRouter();
+const PostItem = ({ post: {id, title, body} }) => {
 
   return (
-    post.title && <Wrapper onClick={() => { router.push('./posts/' + post.id) }}>
-      <Title>{post.title}</Title>
-      <p>{post.body}</p>
+    title && <Link href={`./posts/${id}`}>
+     <Wrapper>
+      <Title>{title}</Title>
+      <p>{body}</p>
     </Wrapper>
-
+        </Link>
   );
 };
 
