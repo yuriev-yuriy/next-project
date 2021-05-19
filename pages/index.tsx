@@ -51,9 +51,6 @@ const Main = () => {
       <Title>
         Posts
       </Title>
-     <Wrapper>
-        <Button onClick={() => router.push('posts/new')}>Add new post</Button>
-      </Wrapper>
       <PostList posts={posts}/>
     </MainLayout>
   );
