@@ -1,7 +1,7 @@
 import React from 'react'; 
 import styled from 'styled-components';
 // import { IPost } from '../types/post';
-import Link from "next/Link";
+import { useRouter } from 'next/router';
 
 const Wrapper = styled.section`
   padding: 4em;
@@ -23,15 +23,15 @@ const Title = styled.h1`
 //   post: IPost[];
 // }
 
-const PostItem = ({ post: {id, title, body} }) => {
+const PostItem = ({ post: { id, title, body } }) => {
+  const router = useRouter();
 
   return (
-    title && <Link href={`./posts/${id}`}>
-     <Wrapper>
+    title && <Wrapper
+      onClick={() => { router.push(`./posts/${id}`) }}>
       <Title>{title}</Title>
       <p>{body}</p>
     </Wrapper>
-        </Link>
   );
 };
 
