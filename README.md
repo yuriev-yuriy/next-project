@@ -1,3 +1,10 @@
+npm i - устанавливает все зависимости
+
+npm run dev - запуск клиентскую часть приложения
+
+https://documenter.getpostman.com/ - апи использованная в проекте
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
